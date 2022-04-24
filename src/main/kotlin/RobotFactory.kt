@@ -2,7 +2,7 @@ import java.io.File
 import java.lang.NullPointerException
 import java.lang.NumberFormatException
 
-class RobotFactory {
+class RobotFactory(val board: Board) {
     private val robots = mutableListOf<Robot>()
 
     fun build(files: MutableList<File>): MutableList<Robot> {
@@ -51,7 +51,7 @@ class RobotFactory {
             }
 
             if (facingSet && positionSet)
-                robots.add(Robot(robotName, inputs, position, facing))
+                robots.add(Robot(robotName, inputs, position, facing, board))
             else
                 println("$robotName could not be built due to incorrectly formatted PLACE command")
         }
