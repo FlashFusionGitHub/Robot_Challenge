@@ -1,4 +1,4 @@
-class Robot(private val name: String, private val inputs: MutableList<Inputs>, private val position: Position, private val facing: Facing) {
+class Robot(val name: String, val inputs: MutableList<Inputs>,  val position: Position, val facing: Facing) {
     var currentPosition = position
     private var currentFacing = facing
     private var placed: Boolean? = null
