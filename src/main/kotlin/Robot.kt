@@ -57,16 +57,16 @@ class Robot(val name: String, val inputs: MutableList<Inputs>,  val position: Po
         val futurePosition = Position(currentPosition.x, currentPosition.y)
 
         if(currentFacing == Facing.NORTH) {
-            futurePosition.x += 1
-        }
-        if(currentFacing == Facing.EAST) {
             futurePosition.y += 1
         }
+        if(currentFacing == Facing.EAST) {
+            futurePosition.x += 1
+        }
         if(currentFacing == Facing.SOUTH) {
-            futurePosition.x -= 1
+            futurePosition.y -= 1
         }
         if (currentFacing == Facing.WEST) {
-            futurePosition.y -= 1
+            futurePosition.x -= 1
         }
 
         if(!fall(futurePosition) && !collision(futurePosition, robots))

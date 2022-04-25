@@ -1,1 +1,1 @@
-data class Board(val spacesX: Int, val spacesY: Int)
+data class Board(val spacesY: Int, val spacesX: Int)
