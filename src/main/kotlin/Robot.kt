@@ -95,7 +95,7 @@ class Robot(val name: String, val inputs: MutableList<Inputs>,  val position: Po
     }
 
     private fun fall(myNextPosition: Position): Boolean {
-        if(myNextPosition.x < 0 || myNextPosition.x > board.spacesX || myNextPosition.y < 0 || myNextPosition.y > board.spacesY)
+        if(myNextPosition.x < board.minSpacesX || myNextPosition.x > board.maxSpacesX || myNextPosition.y < board.minSpacesY || myNextPosition.y > board.maxSpacesY)
             return true
         return false
     }
